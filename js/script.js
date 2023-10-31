@@ -10,7 +10,7 @@ const obj = {
                 },
                 {
                     id: 2,
-                    text: 'fare a',
+                    text: 'mangiare un cappello',
                     done: true
                 },
                 {
@@ -19,7 +19,7 @@ const obj = {
                     done: false
                 },
             ],
-            lastId: 3,
+            lastId: this.tasks,
             todoText: '',
             filterValue: '',
         }
@@ -32,7 +32,20 @@ const obj = {
             //isolating the index and removing it
             const index = this.tasks.find((task) => { return task.id === id })
             this.tasks.splice(index, 1);
-        }
+        },
+        addTask() {
+            if (this.todoText.replaceAll(' ', '') !== '') {
+                this.lastId++
+                const newtask = {
+                    id: this.lastId,
+                    text: this.todoText,
+                    done: false
+                }
+
+                this.tasks.unshift(newtask)
+            }
+            this.todoText = ''
+        },
     }
 }
 
