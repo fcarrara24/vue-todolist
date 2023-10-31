@@ -13,7 +13,18 @@
 <body>
     <div id="app">
         <header></header>
-        <main></main>
+        <main>
+            <ul class="list-group n" v-if="tasks.length > 0">
+                <li class="list-group-item list-group-item-action d-flex flex-row justify-content-between"
+                    v-for="(todo, index) in tasks" :key="todo.index">
+                    <span :class="{'done': todo.done}" @click="toggleDone(index)">{{todo.text}}</span>
+                    <i class="fa-solid fa-trash" style="cursor: pointer;" @click="removeTask(todo.id)"></i>
+                </li>
+            </ul>
+            <div v-else>
+                non hai piu task da fare
+            </div>
+        </main>
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="js/script.js"></script>
