@@ -4,6 +4,16 @@ header{
 
 }
 
+body{
+    background-image: url(https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0b/58/f5/f6/spaghettando-gusto-e.jpg?w=600&h=400&s=1);
+    background-size: cover;
+}
+
+#app{
+    height: 100vh;
+    padding-top: 100px;
+}
+
 header img{
     width: 300px;
 }
@@ -14,4 +24,13 @@ li{
 
 .done{
     text-decoration: line-through;
+}
+
+.image-container{
+    max-height: 5vh;
+    overflow: none;
+}
+
+.image-container>*{
+    max-height: 100%;
 }

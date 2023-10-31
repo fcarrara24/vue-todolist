@@ -47,14 +47,7 @@ const obj = {
             this.todoText = ''
         },
         toggleDone(id) {
-
-            this.tasks.forEach((task, index) => {
-                if (task.id === id) {
-                    this.tasks[index].done = !this.tasks[index].done
-                    return;
-                }
-            });
-
+            this.tasks[id].done = !this.tasks[id].done
         },
     }
 }
