@@ -46,6 +46,9 @@ const obj = {
             }
             this.todoText = ''
         },
+        toggleDone(index) {
+            this.tasks[index].done = !this.tasks[index].done
+        },
     }
 }
 

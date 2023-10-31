@@ -31,7 +31,8 @@
             <ul class="list-group n" v-if="tasks.length > 0">
                 <li class="list-group-item list-group-item-action d-flex flex-row justify-content-between"
                     v-for="(todo, index) in tasks" :key="todo.index">
-                    <span :class="{'done': todo.done}" @click="toggleDone(index)">{{todo.text}}</span>
+                    <span :class="{'done': todo.done}" @click="toggleDone(index)"
+                        style="cursor: pointer;">{{todo.text}}</span>
                     <i class="fa-solid fa-x" style="cursor: pointer;" @click="removeTask(todo.id)"></i>
                 </li>
             </ul>
