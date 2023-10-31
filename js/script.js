@@ -5,17 +5,17 @@ const obj = {
             tasks: [
                 {
                     id: 1,
-                    text: 'prendere i diamanti',
+                    text: 'mangiare la pasta',
                     done: false
                 },
                 {
                     id: 2,
-                    text: 'mangiare un cappello',
+                    text: 'mangiare la verdura',
                     done: true
                 },
                 {
                     id: 3,
-                    text: 'fare il bucato',
+                    text: 'mangiare la carne',
                     done: false
                 },
             ],
@@ -46,8 +46,15 @@ const obj = {
             }
             this.todoText = ''
         },
-        toggleDone(index) {
-            this.tasks[index].done = !this.tasks[index].done
+        toggleDone(id) {
+
+            this.tasks.forEach((task, index) => {
+                if (task.id === id) {
+                    this.tasks[index].done = !this.tasks[index].done
+                    return;
+                }
+            });
+
         },
     }
 }
