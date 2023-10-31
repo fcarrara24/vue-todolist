@@ -11,7 +11,7 @@ const obj = {
                 {
                     id: 2,
                     text: 'fare a',
-                    done: false
+                    done: true
                 },
                 {
                     id: 3,
@@ -27,6 +27,11 @@ const obj = {
     methods: {
         changeThings() {
 
+        },
+        removeTask(id) {
+            //isolating the index and removing it
+            const index = this.tasks.find((task) => { return task.id === id })
+            this.tasks.splice(index, 1);
         }
     }
 }

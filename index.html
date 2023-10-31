@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Vue To Do List</title>
 </head>
 
@@ -18,7 +21,7 @@
                 <li class="list-group-item list-group-item-action d-flex flex-row justify-content-between"
                     v-for="(todo, index) in tasks" :key="todo.index">
                     <span :class="{'done': todo.done}" @click="toggleDone(index)">{{todo.text}}</span>
-                    <i class="fa-solid fa-trash" style="cursor: pointer;" @click="removeTask(todo.id)"></i>
+                    <i class="fa-solid fa-x" style="cursor: pointer;" @click="removeTask(todo.id)"></i>
                 </li>
             </ul>
             <div v-else>

@@ -1,0 +1,17 @@
+header{
+    display: flex;
+    justify-content: center;
+
+}
+
+header img{
+    width: 300px;
+}
+
+li{
+    list-style-type: none;
+}
+
+.done{
+    text-decoration: line-through;
+}
