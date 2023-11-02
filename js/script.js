@@ -1,4 +1,6 @@
+import { getIndex } from './utility.js'
 const { createApp } = Vue;
+
 const obj = {
     data() {
         return {
@@ -19,7 +21,7 @@ const obj = {
                     done: false
                 },
             ],
-            lastId: this.tasks,
+            lastId: 3,
             todoText: '',
             filterValue: '',
         }
@@ -30,7 +32,7 @@ const obj = {
         },
         removeTask(id) {
             //isolating the index and removing it
-            const index = this.tasks.find((task) => { return task.id === id })
+            const index = getIndex(parseInt(id), this.tasks)
             this.tasks.splice(index, 1);
         },
         addTask() {
